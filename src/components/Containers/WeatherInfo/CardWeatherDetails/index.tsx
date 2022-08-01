@@ -23,7 +23,7 @@ const CardWeatherDetails = ({main}: CardWDProps): JSX.Element => (
                         </Grid>
                         <Grid item>
                             <Typography>
-                                {main?.[parserItem?.key]}°
+                                {main?.[parserItem?.key]} {parserItem.sufixLabel}
                             </Typography>
                         </Grid>
                     </Grid>
