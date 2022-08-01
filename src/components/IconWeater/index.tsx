@@ -1,3 +1,4 @@
+import { Skeleton } from '@mui/material'
 import React from 'react'
 
 interface Props {
@@ -6,10 +7,13 @@ interface Props {
 
 const IconWeather = ({code}: Props): JSX.Element => {
     
-    const genUrl = () => 
-        `http://openweathermap.org/img/wn/${code}@2x.png`
+    const genUrl = () => `http://openweathermap.org/img/wn/${code}@2x.png`
 
-    return <img src={genUrl()} alt="weather_img" />
+    return code ? (
+        <img src={genUrl()} alt="weather_img" loading="lazy" />
+    ) : (
+        <Skeleton variant="circular" width={50} height={50} />
+    )
 }
 
 export default IconWeather

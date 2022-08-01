@@ -5,7 +5,7 @@ const axios: AxiosInstance = Axios.create({
     headers: {
         'content-type': 'application/json',
     },
-    params: {appid: process.env.REACT_APP_OW_KEY},
+    params: {appid: process.env.REACT_APP_OW_KEY, units: 'metric'},
     timeout: 3000,
 
 })

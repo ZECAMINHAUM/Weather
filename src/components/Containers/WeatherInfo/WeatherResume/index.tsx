@@ -1,29 +1,32 @@
 import React from 'react'
-import { Grid, Typography } from '@mui/material';
+import { capitalize, Grid, Skeleton, Typography } from '@mui/material';
 
 import IconWeather from 'components/IconWeater';
 
 interface WeatherResumeProps {
-    main: any
+    weather: any;
+    loading: boolean;
 }
 
-const WeatherResume = ({main}: WeatherResumeProps): JSX.Element => {
+const WeatherResume = ({weather, loading}: WeatherResumeProps): JSX.Element => {
     return (
-        <Grid 
-            container 
-            direction='row' 
-            justifyContent="center" 
-            alignItems="center" 
-            spacing={2}>
-            <Grid item>
-                <IconWeather code={main?.icon} />
+            <Grid 
+                container
+                item 
+                direction='column' 
+                justifyContent="center" 
+                alignItems="center" 
+                spacing={2}>
+                    <IconWeather code={weather?.icon} />
+                <Grid item>
+                    {loading ? 
+                        <Skeleton variant="text" width={150} height={20} /> : (
+                        <Typography variant="h4">
+                            {capitalize(weather?.description || '')}
+                        </Typography>
+                    )}
+                </Grid>
             </Grid>
-            <Grid item>
-                <Typography>
-                    {main?.description}
-                </Typography>
-            </Grid>
-        </Grid>
     )
 }
 
