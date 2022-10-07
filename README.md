@@ -1,6 +1,5 @@
 # Weather App
 
-
 A simple project in React with Typescript using some packages for demonstrate a simply arch.
 
 <img width="1376" alt="Captura de Tela 2022-08-01 às 15 19 08" src="https://user-images.githubusercontent.com/28874522/182216762-64316df0-dc2c-4ab8-94ae-e3631583e65c.png">
